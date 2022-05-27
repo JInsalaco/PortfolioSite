@@ -8,42 +8,43 @@ export function Portfolio() {
             </div>
             <Row>
                 <Col>
-                    <Card>
+                    <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
                                 Wedd.io
                             </Card.Title>
                             <Card.Text>
                                 Full-stack web application to assist with wedding planning and manage guest lists
+                                <br/>
                                 <p className="text-muted">Created using Node.js, MongoDB, Express, Redis, React, Firebase and AWS</p>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col>
-                    <Card>
+                    <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
                                 The Duck Pond
                             </Card.Title>
                             <Card.Text>
                                 Online forum for Stevens students to post questions and start discussions
-                                <p className="text-muted">Created using Node.js, MongoDB, Express, and Vue</p>
                                 <br/>
+                                <p className="text-muted">Created using Node.js, MongoDB, Express, and Vue</p>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col>
-                    <Card>
+                    <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
                                 Hiragana Tutor
                             </Card.Title>
                             <Card.Text>
                                 React single-page application designed to gamify Japanese language learning
-                                <p className="text-muted">Created using React</p>
                                 <br/>
+                                <p className="text-muted">Created using React</p>
                             </Card.Text>
                         </Card.Body>
                     </Card>
