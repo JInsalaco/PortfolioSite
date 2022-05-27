@@ -1,12 +1,13 @@
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 
 export function About(){
     return(
-        <Container>
-            <div id='about'>
-                <h1 className="text-center">About Me</h1>
-            </div>
+        <Container id='about' className="about mb-4">
             <div>
+                <h1>About Me</h1>
+            </div>
+            <Card>
+                <Card.Body>
                 <h2>Joseph Insalaco</h2>
                 <p className="text-muted">
                     B.E. Computer Engineering - Stevens Institute of Technology <br/>
@@ -25,7 +26,8 @@ export function About(){
                 <p>
                     Please check out <a href="https://drive.google.com/file/d/1qCvVZVbVNmcCtf19baIBBOxXCRNSXxq9/view?usp=sharing" target="_blank" rel="noopener noreferrer">my resume</a> for more information
                 </p>
-            </div>
+                </Card.Body>
+            </Card>
         </Container>
     );
 }

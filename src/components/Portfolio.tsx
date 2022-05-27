@@ -1,52 +1,68 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
+import githubIcon from './github-icon.svg'
 
 export function Portfolio() {
     return(
-        <Container>
-            <div id='portfolio'>
+        <Container  id='portfolio' className="portfolio">
+            <div>
                 <h1>Portfolio</h1>
             </div>
             <Row>
-                <Col>
+                <Col className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
-                                Wedd.io
+                                <div className='textLeft'>Wedd.io</div>
+                                <a href="https://github.com/JInsalaco/CS554_Good_Nodels" target="_blank" rel="noreferrer">
+                                    <img className='textRight' width='25' src={githubIcon} alt="GitHub" />
+                                </a>
+                                <div style={{clear: "both"}}></div>
                             </Card.Title>
                             <Card.Text>
                                 Full-stack web application to assist with wedding planning and manage guest lists
-                                <br/>
-                                <p className="text-muted">Created using Node.js, MongoDB, Express, Redis, React, Firebase and AWS</p>
                             </Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                            <p className='text-muted'>Node.js, MongoDB, Redis, React, AWS</p>
+                        </Card.Footer>
                     </Card>
                 </Col>
-                <Col>
+                <Col className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
-                                The Duck Pond
+                                <div className='textLeft'>The Duck Pond</div>
+                                <a href="https://github.com/JInsalaco/CS546_Group5" target="_blank" rel="noreferrer">
+                                    <img className='textRight' width='25' src={githubIcon} alt="GitHub" />
+                                </a>
+                                <div style={{clear: "both"}}></div>
                             </Card.Title>
                             <Card.Text>
                                 Online forum for Stevens students to post questions and start discussions
-                                <br/>
-                                <p className="text-muted">Created using Node.js, MongoDB, Express, and Vue</p>
                             </Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                            <p className="text-muted">Node.js, MongoDB, Express, Vue</p>
+                        </Card.Footer>
                     </Card>
                 </Col>
-                <Col>
+                <Col className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
                             <Card.Title>
-                                Hiragana Tutor
+                                <div className='textLeft'>Hiragana Tutor</div>
+                                <a href="https://github.com/gpan1/cs545-Final-Project" target="_blank" rel="noreferrer">
+                                    <img className='textRight' width='25' src={githubIcon} alt="GitHub" />
+                                </a>
+                                <div style={{clear: "both"}}></div>
                             </Card.Title>
                             <Card.Text>
                                 React single-page application designed to gamify Japanese language learning
-                                <br/>
-                                <p className="text-muted">Created using React</p>
                             </Card.Text>
                         </Card.Body>
+                        <Card.Footer>
+                            <p className="text-muted">React</p>
+                        </Card.Footer>
                     </Card>
                 </Col>
             </Row>

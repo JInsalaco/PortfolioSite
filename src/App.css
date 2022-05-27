@@ -1,7 +1,9 @@
 .site-home{
   justify-content: center;
 }
-
+.body {
+  background-color: #a1d9ef;
+}
 .site-navigation{
   opacity: .85;
 }
@@ -12,6 +14,27 @@
 
 .site-footer{
   background-color: #212529;
-  text-align: center;
   color: white;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  padding: 0 !important;
+}
+
+.textLeft {
+	float: left;
+}
+.textRight {
+	float: right;
+}
+
+.tech-list{
+  display: flex;
+  align-items: left;
+  gap: 2rem;
+  font-size: 1rem;
+  opacity: 0.6;
+  margin-top: auto;
+  list-style: none;
+  padding-left: 0rem;
 }
