@@ -36,3 +36,11 @@
   list-style: none;
   padding-left: 0rem;
 }
+.welcome img{
+  display: inline-block;
+}
+.welcome h1{
+  font-size: 36pt;
+  display: inline-block;
+  padding-left: 10px;
+}

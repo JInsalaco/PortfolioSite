@@ -7,7 +7,7 @@ export function Portfolio() {
             <div>
                 <h1>Portfolio</h1>
             </div>
-            <Row>
+            <Row xs={1} s={1} md={3}>
                 <Col className="mb-4">
                     <Card className="h-100">
                         <Card.Body>

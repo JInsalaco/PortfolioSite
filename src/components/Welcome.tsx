@@ -1,11 +1,13 @@
 import { Container} from "react-bootstrap";
-
+import headshot from './headshot.jpeg'
 export function Welcome() {
     return(
-        <Container id='home' className="mb-4">
-            <div className='text-center'>
-                <h1>Welcome to my site!</h1>
-                <p>Welcome to the personal website of Joseph Insalaco</p>
+        <Container id='home' className="mb-4 mt-4">
+            <div className='welcome'>
+                <img src={headshot} width='100' className="rounded-circle" alt="Headshot of Joseph Insalaco"/>
+                <h1>
+                Joseph Insalaco
+                </h1>
             </div>
         </Container>
     )
