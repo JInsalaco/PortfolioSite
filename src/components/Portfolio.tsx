@@ -51,7 +51,7 @@ export function Portfolio() {
                         <Card.Body>
                             <Card.Title>
                                 <div className='textLeft'>Hiragana Tutor</div>
-                                <a href="https://github.com/gpan1/cs545-Final-Project" target="_blank" rel="noreferrer">
+                                <a href="https://github.com/JInsalaco/Hiragana-Tutor" target="_blank" rel="noreferrer">
                                     <img className='textRight' width='25' src={githubIcon} alt="GitHub" />
                                 </a>
                                 <div style={{clear: "both"}}></div>
