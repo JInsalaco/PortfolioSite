@@ -8,20 +8,20 @@ export function About(){
             </div>
             <Card>
                 <Card.Body>
-                <h2>Joseph Insalaco</h2>
-                <p className="text-muted">
-                    B.E. Computer Engineering - Stevens Institute of Technology <br/>
-                    M.S. Computer Science - Stevens Institute of Technology
-                </p>
                 <p>
-                    My name is Joseph Insalaco and I am a recent graduate of Stevens Institute of Technology. 
-                    I currently hold a Bachelor's of Engineering in Computer Engineering and a Master's Degree
+                    I am a recent graduate of Stevens Institute of Technology with a 
+                    Bachelor of Engineering in Computer Engineering and a Master of Science
                     in Computer Science.
                 </p>
                 <p>
                     I am a passionate programmer with experience with several technologies including but not limited to
-                    Node.js, MongoDB, PostgreSQL, Express, React, Redis, AWS, and more. My primary focus is around full-stack web
-                    development and software engineering.
+                    Node.js, MongoDB, PostgreSQL, Express, React, Redis, AWS, and more. I currently work as a Data Architect
+                    under my company's Enterprise Business Architecture and Tools department. However, my primary focus is 
+                    around full-stack web development and software engineering.
+                </p>
+                <p>
+                    Outside of work I enjoy cooking, baking, and lifting. I am also a passionate
+                    foodie and I love exploring new restaurants.
                 </p>
                 <p>
                     Please check out <a href="https://drive.google.com/file/d/1qCvVZVbVNmcCtf19baIBBOxXCRNSXxq9/view?usp=sharing" target="_blank" rel="noopener noreferrer">my resume</a> for more information
