@@ -15,7 +15,6 @@
   color: white;
   text-align: center;
   align-items: center;
-  display: flex;
   padding: 0 !important;
 }
 
@@ -43,4 +42,9 @@
   font-size: 36pt;
   display: inline-block;
   padding-left: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }
