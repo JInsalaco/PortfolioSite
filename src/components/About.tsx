@@ -2,7 +2,7 @@ import { Container, Card } from "react-bootstrap";
 
 export function About(){
     return(
-        <Container id='about' className="about mb-4">
+        <Container id='about' className="about mb-5">
             <div>
                 <h1>About Me</h1>
             </div>

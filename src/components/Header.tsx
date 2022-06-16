@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 
 export function Header() {
     return(
-        <Navbar bg="dark" sticky='top' className='site-navigation' expand="lg" variant='dark'>
+        <Navbar bg='black' className='site-navigation' expand="lg" variant='dark'>
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
