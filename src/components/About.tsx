@@ -9,15 +9,12 @@ export function About(){
             <Card>
                 <Card.Body>
                 <p>
-                    I am a recent graduate of Stevens Institute of Technology with a 
-                    Bachelor of Engineering in Computer Engineering and a Master of Science
-                    in Computer Science.
+                    Hello, my name is Joseph Insalaco. I am a current software engineer at Bank of America. I hold a B.E. in Computer
+                    Engineering, and a M.S. in Computer Science from Stevens Institute of Technology.
                 </p>
                 <p>
                     I am a passionate programmer with experience with several technologies including but not limited to
-                    Node.js, MongoDB, PostgreSQL, Express, React, Redis, AWS, and more. I currently work as a Data Architect
-                    under my company's Enterprise Business Architecture and Tools department. However, my primary focus is 
-                    around full-stack web development and software engineering.
+                    Node.js, MongoDB, PostgreSQL, Express, React, Redis, AWS, and more.
                 </p>
                 <p>
                     Outside of work I enjoy cooking, baking, and lifting. I am also a passionate
