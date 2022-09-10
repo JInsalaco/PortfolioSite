@@ -3,7 +3,7 @@ import githubIcon from './github-icon.svg'
 
 export function Portfolio() {
     return(
-        <Container  id='portfolio' className="portfolio">
+        <Container  id='portfolio' className="portfolio mb-5">
             <div>
                 <h1>Portfolio</h1>
             </div>
@@ -23,7 +23,7 @@ export function Portfolio() {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <p className='text-muted'>Node.js, MongoDB, Redis, React, AWS</p>
+                            <p>Node.js, MongoDB, Redis, React, AWS</p>
                         </Card.Footer>
                     </Card>
                 </Col>
@@ -42,7 +42,7 @@ export function Portfolio() {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <p className="text-muted">Node.js, MongoDB, Express, Vue</p>
+                            <p>Node.js, MongoDB, Express, Vue</p>
                         </Card.Footer>
                     </Card>
                 </Col>
@@ -61,7 +61,7 @@ export function Portfolio() {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <p className="text-muted">React</p>
+                            <p>React</p>
                         </Card.Footer>
                     </Card>
                 </Col>

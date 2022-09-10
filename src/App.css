@@ -10,15 +10,6 @@
   opacity: rgba(255, 255, 255, 1);
 }
 
-.site-footer{
-  background-color: #212529;
-  color: white;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  padding: 0 !important;
-}
-
 .textLeft {
 	float: left;
 }
@@ -43,4 +34,27 @@
   font-size: 36pt;
   display: inline-block;
   padding-left: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.card {
+  background-color: #363537;
+  color: #FAFAFA;
+}
+
+.list-group-item {
+  background-color: #363537;
+  color: #FAFAFA !important;
+}
+
+h1 {
+  color: #FAFAFA;
+}
+
+a {
+  color: #7999ff;
 }
