@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from '@mui/material/Container';
 import { About } from "./About";
 import { ContactInfo } from "./ContactInfo";
 import { Portfolio } from "./Portfolio";

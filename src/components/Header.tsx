@@ -1,19 +1,18 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
 
 export function Header() {
     return(
-        <Navbar bg='black' className='site-navigation' expand="lg" variant='dark'>
-            <Container>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ms-auto me-8 navigation-content">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#about">About Me</Nav.Link>
-                    <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-                    <Nav.Link href="#contact-info">Contact Info</Nav.Link>
-                </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <AppBar className='site-navigation'>
+            <Toolbar>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    Home
+                </Box>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    Blog
+                </Box>
+            </Toolbar>
+        </AppBar>
     );
 }

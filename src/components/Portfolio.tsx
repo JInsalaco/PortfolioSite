@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Card, Grid, Typography} from "@mui/material";
 import githubIcon from './github-icon.svg'
 
 export function Portfolio() {
@@ -7,7 +7,19 @@ export function Portfolio() {
             <div>
                 <h1>Portfolio</h1>
             </div>
-            <Row xs={1} s={1} md={3}>
+            <Grid>
+                <Grid item>
+                    <Card>
+                        <Typography>
+                            Wedd.io
+                        </Typography>
+                        <a href="https://github.com/JInsalaco/CS554_Good_Nodels" target="_blank" rel="noreferrer">
+                            <img className='textRight' width='25' src={githubIcon} alt="GitHub" />
+                        </a>
+                    </Card>
+                </Grid>
+            </Grid>
+            {/* <Row xs={1} s={1} md={3}>
                 <Col className="mb-4">
                     <Card className="h-100">
                         <Card.Body>
@@ -65,7 +77,7 @@ export function Portfolio() {
                         </Card.Footer>
                     </Card>
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     )
 }
