@@ -7,8 +7,8 @@ export function Portfolio() {
             <div>
                 <h1>Portfolio</h1>
             </div>
-            <Grid container spacing={2} xs={12}>
-                <Grid item xs={4}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={4}>
                     <Card sx={{p: 2}}>
                         <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
                             <Typography>
@@ -22,7 +22,7 @@ export function Portfolio() {
                         <Typography variant="body2" color="text.secondary">Node.js, MongoDB, Redis, React, AWS</Typography>
                     </Card>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={4}>
                     <Card sx={{p: 2}}>
                         <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
                         <Typography>
@@ -36,7 +36,7 @@ export function Portfolio() {
                         <Typography variant="body2" color="text.secondary">Node.js, MongoDB, Express, Vue</Typography>
                     </Card>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={4}>
                     <Card sx={{p: 2}}>
                         <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
                         <Typography>
