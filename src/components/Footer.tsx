@@ -1,9 +1,9 @@
-import { Container } from "react-bootstrap"
+import { Typography } from "@mui/material";
 
 export function Footer() {
     return(
-        <footer className="site-footer">
-            <p>© Joseph Insalaco 2022</p>
+        <footer>
+            <Typography variant="body2" justifyContent={"center"}>© Joseph Insalaco 2023</Typography>
         </footer>
     )
 }

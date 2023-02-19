@@ -1,4 +1,4 @@
-import { Container, Card } from "react-bootstrap";
+import { Container, Card } from "@mui/material";
 
 export function About(){
     return(
@@ -6,10 +6,9 @@ export function About(){
             <div>
                 <h1>About Me</h1>
             </div>
-            <Card>
-                <Card.Body>
+            <Card sx={{p: 2}}>
                 <p>
-                    Hello, my name is Joseph Insalaco. I am a current software engineer at Bank of America. I hold a B.E. in Computer
+                    I am a current software engineer at Bank of America. I hold a B.E. in Computer
                     Engineering, and a M.S. in Computer Science from Stevens Institute of Technology.
                 </p>
                 <p>
@@ -23,7 +22,6 @@ export function About(){
                 <p>
                     Please check out <a href="https://drive.google.com/file/d/1qCvVZVbVNmcCtf19baIBBOxXCRNSXxq9/view?usp=sharing" target="_blank" rel="noopener noreferrer">my resume</a> for more information
                 </p>
-                </Card.Body>
             </Card>
         </Container>
     );
