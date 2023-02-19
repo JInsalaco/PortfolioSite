@@ -1,7 +1,6 @@
 import { AppBar, Toolbar, Button, CssBaseline } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { makeStyles } from "tss-react/mui";
-import headshot from './headshot.jpeg'
 
 const useStyles = makeStyles()(() => ({
     header: {
