@@ -16,16 +16,17 @@ export function Blog(){
     }
     
     return(
-        <Card>
-            <CardContent>
-                <Typography>
-                    {testData?.title}
-                </Typography>
-                <Typography>
-                    {testData?.body}
-                </Typography>
-                <Box/>
-            </CardContent>
-        </Card>
+        <h1>Coming Soon!</h1>
+        // <Card>
+        //     <CardContent>
+        //         <Typography>
+        //             {testData?.title}
+        //         </Typography>
+        //         <Typography>
+        //             {testData?.body}
+        //         </Typography>
+        //         <Box/>
+        //     </CardContent>
+        // </Card>
     );
 }

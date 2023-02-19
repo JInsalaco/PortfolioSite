@@ -1,7 +1,9 @@
+import { Typography } from "@mui/material";
+
 export function Footer() {
     return(
-        <footer className="site-footer">
-            <p>© Joseph Insalaco 2023</p>
+        <footer>
+            <Typography variant="body2" justifyContent={"center"}>© Joseph Insalaco 2023</Typography>
         </footer>
     )
 }

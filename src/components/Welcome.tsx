@@ -1,14 +1,27 @@
-import { Container} from "@mui/material";
+import { Typography, Stack } from "@mui/material";
 import headshot from './headshot.jpeg'
+import { makeStyles } from "tss-react/mui";
+
+const useStyles = makeStyles()(() => ({
+    headshot: {
+        borderRadius: '50%',
+        display: 'inline-block',
+    },
+    fullname: {
+        fontSize: '36pt',
+        paddingLeft: '1rem',
+    }
+ }));
+
+
 export function Welcome() {
+    const { classes } = useStyles();
     return(
-        <Container id='home' className="mb-4 mt-4">
-            <div className='welcome'>
-                <img src={headshot} width='100' className="rounded-circle" alt="Headshot of Joseph Insalaco"/>
-                <h1>
+        <Stack direction="row" id='home' alignItems="center" spacing={2}>
+            <img src={headshot} width='100' className={classes.headshot} alt="Headshot of Joseph Insalaco"/>
+            <Typography variant='h1' className={classes.fullname}>
                 Joseph Insalaco
-                </h1>
-            </div>
-        </Container>
+            </Typography>
+        </Stack>
     )
 }
