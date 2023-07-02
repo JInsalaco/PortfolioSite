@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Container, Grid, Skeleton, Typography} from '@mui/material';
-import axios from 'axios';
 import { formatTimestamp } from './helpers/helpers';
+import { getBlogPost } from '../../api/get';
 
 export function BlogPost(){
     interface blog {
@@ -15,21 +15,20 @@ export function BlogPost(){
     }
     
     const [post, setPost] = useState<blog>(Object);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
     const { id } = useParams();
     
     useEffect(() => {
         const fetchData = async() => {
             setLoading(true);
             try{
-                const {data} = await axios.get(`http://localhost:3001/blog/${id}`)
+                const data:blog = await getBlogPost(id);
                 setPost(data);
                 setLoading(false);
             } catch(e){
                 console.log(e);
             }
         };
-
         fetchData();
     },[id])
 

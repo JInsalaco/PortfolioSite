@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import {Card, Box, CardContent, CardMedia, Typography, Link, Grid} from '@mui/material';
-import axios from 'axios';
 import { Container } from '@mui/system';
 import { formatTimestamp } from './helpers/helpers';
+import { getAllBlogPosts } from '../../api/get';
 
 export function Blog(){
     interface blogPost {
@@ -14,12 +14,15 @@ export function Blog(){
         _id: string,
     }
     const [blogPosts, setBlogPosts] = useState<blogPost[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchData = async() => {
+            setLoading(true);
             try{
-                const {data} = await axios.get('http://localhost:3001/blog/')
+                const data:blogPost[] = await getAllBlogPosts();
                 setBlogPosts(data);
+                setLoading(false);
             } catch(e){
                 console.log(e);
             }
@@ -31,7 +34,7 @@ export function Blog(){
     const buildCards = () => {
          return blogPosts.map((blogPost) => {
             return (
-                <Grid item xs={6}>
+                <Grid key={blogPost._id} item xs={6}>
                     <Card sx={{ display: 'flex', maxWidth: '50rem' }}>
                         <Link href={`/blog/${blogPost._id}`}>
                             <CardMedia
@@ -63,7 +66,7 @@ export function Blog(){
 
     return(
         <Container>
-            <Grid container spacing={6} xs={12}>
+            <Grid container spacing={6}>
                 {buildCards()}
             </Grid>
         </Container>
