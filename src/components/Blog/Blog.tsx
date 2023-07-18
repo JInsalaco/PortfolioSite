@@ -14,15 +14,12 @@ export function Blog(){
         _id: string,
     }
     const [blogPosts, setBlogPosts] = useState<blogPost[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchData = async() => {
-            setLoading(true);
             try{
                 const data:blogPost[] = await getAllBlogPosts();
                 setBlogPosts(data);
-                setLoading(false);
             } catch(e){
                 console.log(e);
             }

@@ -53,7 +53,7 @@ export function BlogPost(){
                             <hr/>
                         </Grid>
                         <Grid item xs={12}>
-                            <img src={post.photo} width="854" height="480"/>
+                            <img alt="" src={post.photo} width="854" height="480"/>
                         </Grid>
                         <Grid item xs={12}>
                             <hr/>
