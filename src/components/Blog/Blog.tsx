@@ -24,7 +24,6 @@ export function Blog(){
                 console.log(e);
             }
         };
-
         fetchData();
     },[])
 
