@@ -1,4 +1,4 @@
-import { Container, Card } from "@mui/material";
+import { Container, Card, Link } from "@mui/material";
 
 export function About(){
     return(
@@ -20,7 +20,7 @@ export function About(){
                     foodie and I love exploring new restaurants.
                 </p>
                 <p>
-                    Please check out <a href="https://drive.google.com/file/d/1qCvVZVbVNmcCtf19baIBBOxXCRNSXxq9/view?usp=sharing" target="_blank" rel="noopener noreferrer">my resume</a> for more information
+                    Please check out <Link href="https://drive.google.com/file/d/1qCvVZVbVNmcCtf19baIBBOxXCRNSXxq9/view?usp=sharing" target="_blank" rel="noopener noreferrer">my resume</Link> for more information
                 </p>
             </Card>
         </Container>

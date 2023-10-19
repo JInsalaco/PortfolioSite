@@ -1,27 +1,10 @@
-import { AppBar, Toolbar, Button, CssBaseline } from '@mui/material';
+import React from 'react';
+import { AppBar, Toolbar, Button, Box, IconButton} from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
-import { makeStyles } from "tss-react/mui";
-
-const useStyles = makeStyles()(() => ({
-    header: {
-       marginBottom: '25px'
-    },
-    menuButton: {
-        marginLeft: '1rem'
-    },
-    toolbar: {
-        justifyContent: 'flex-end',
-    },
-    headshot: {
-        borderRadius: '50%',
-        display: 'inline-block',
-    },
-    fullname: {
-        fontSize: '36pt',
-        paddingLeft: '1rem',
-    }
- }));
-
+import { useTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from '../ColorModeContext';
 const menuButtons: {href: string, title: string}[] = [
     {
         href: '/',
@@ -34,31 +17,60 @@ const menuButtons: {href: string, title: string}[] = [
 ];
 
 export function Header() {
-    const { classes } = useStyles(); 
+    const theme = useTheme();
+    const colorMode = React.useContext(ColorModeContext);
 
     const showMenuButtons = () => {
          return menuButtons.map(({title, href}) => {
             return(
                 <Button
-                    {...{
-                        key: title,
-                        color: "inherit",
-                        to: href,
-                        component: RouterLink,
-                        className: classes.menuButton,
-                    }}
+                 key={title}
+                 color='inherit'
+                 to={href}
+                 component={RouterLink}
+                 sx={{ml:1}}
                 >
                     {title}
                 </Button>
             )
         })
     }
+
+    const themeToggle = (()=>{
+        return (
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'text.primary',
+                    borderRadius: 1,
+                }}
+                >
+                <IconButton
+                    sx={{ ml: 1 }}
+                    onClick={colorMode.toggleColorMode}
+                    color="inherit"
+                >
+                    {theme.palette.mode === 'dark' ? (
+                    <Brightness7Icon />
+                    ) : (
+                    <Brightness4Icon />
+                    )}
+                </IconButton>
+            </Box>
+        )
+    })
     
     return(
-        <AppBar className={classes.header} position="static">
-            <CssBaseline/>
-            <Toolbar className={classes.toolbar}>
+        <AppBar sx={{mb:5}} position="static">
+            
+            <Toolbar sx={{justifyContent: 'flex-end'}}>
+                <>
                 {showMenuButtons()}
+                {themeToggle()}
+                </>
+                
             </Toolbar>
         </AppBar>
     );

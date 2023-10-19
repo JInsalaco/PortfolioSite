@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Card, Box, CardContent, CardMedia, Typography, Link, Grid} from '@mui/material';
-import { Container } from '@mui/system';
+import {Card, Box, CardContent, CardMedia, Typography, Link, Grid, Container} from '@mui/material';
 import { formatTimestamp } from './helpers/helpers';
 import { getAllBlogPosts } from '../../api/get';
 
@@ -62,9 +61,13 @@ export function Blog(){
 
     return(
         <Container>
+            {blogPosts ? 
             <Grid container spacing={6}>
                 {buildCards()}
             </Grid>
+            :
+            <Typography align='center' component={'div'}>Content coming soon!</Typography>
+            }
         </Container>
     );
 }

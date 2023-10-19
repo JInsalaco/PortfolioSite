@@ -1,5 +1,6 @@
-import { Container, Card, Grid, Typography, Stack, Link} from "@mui/material";
-import githubIcon from '../images/github-icon.svg'
+import React from 'react';
+import { Container, Card, Grid, Typography, Stack, Link, useTheme} from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub';
 interface technologyCard {
     title: string,
     url: string,
@@ -7,6 +8,7 @@ interface technologyCard {
     technologies: string,
 }
 export function Portfolio() {
+    const theme = useTheme();
     const cardContent:technologyCard[] = [{
         title: "Wedd.io",
         url: "https://github.com/JInsalaco/CS554_Good_Nodels",
@@ -37,7 +39,7 @@ export function Portfolio() {
                                 {card.title}
                             </Typography>
                             <Link href={card.url} target="_blank" rel="noreferrer">
-                                <img width='25' src={githubIcon} alt="GitHub" />
+                                <GitHubIcon sx={theme.palette.mode === 'light' ? {color:'black'} : {color:'white'}}/>
                             </Link>
                         </Stack>
                         <Typography sx={{ mb: 1.5 }} variant="body1">{card.content}</Typography>
