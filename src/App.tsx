@@ -6,6 +6,7 @@ import { Blog } from "./components/Blog/Blog";
 import { BlogPost } from "./components/Blog/BlogPost";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import CreateArticle from "./components/Publishing/CreateArticle";
 
 const darkTheme = createTheme({
   palette: {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path='/blog' element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost/>} />
+          <Route path="/admin/publish" element={<CreateArticle/>}/>
         </Routes>
       </Router>
     </ThemeProvider>
