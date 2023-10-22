@@ -4,7 +4,7 @@ import {Container, Grid, Skeleton, Typography} from '@mui/material';
 import { formatTimestamp } from './helpers/helpers';
 import { getBlogPost } from '../../api/get';
 
-export function BlogPost(){
+export default function BlogPost(){
     interface blog {
         title: string,
         review: string,

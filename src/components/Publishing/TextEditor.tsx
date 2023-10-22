@@ -1,25 +1,36 @@
-import './editorStyles.css';
-import { EditorProvider } from '@tiptap/react';
+import './styles/editorStyles.css';
+import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import TextAlign from "@tiptap/extension-text-align";
+import UnderlineExtension from "@tiptap/extension-underline";
+import Superscript from "@tiptap/extension-superscript";
+import Subscript from "@tiptap/extension-subscript";
+import Highlight from "@tiptap/extension-highlight";
+import Link from "@tiptap/extension-link";
 import MenuBar from './MenuBar';
+import StyledEditor from './StyledEditor';
 
-const extensions = [
-  StarterKit.configure({
-    bulletList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+interface textEditorProps {
+  articleBody: string,
+  onChange: any,
+}
+
+const TextEditor = (props:textEditorProps) => {
+  const {articleBody, onChange} = props;
+  const editor = useEditor({
+    extensions: [StarterKit, TextAlign.configure({types: ["heading", "paragraph"],}), UnderlineExtension, Superscript, Subscript, Highlight, Link],
+    content: articleBody,
+    onUpdate: ({ editor }) => {
+      onChange(editor.getHTML());
     },
-    orderedList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-  }),
-]
+  });
 
-const content = ``
-
-export default function TextEditor() {
   return (
-    <EditorProvider children={null} slotBefore={<MenuBar/>} extensions={extensions} content={content}></EditorProvider>
+    <StyledEditor>
+      {editor && <MenuBar editor={editor}/>}
+      <EditorContent editor={editor}/>
+    </StyledEditor>
   )
 }
+
+export default TextEditor;

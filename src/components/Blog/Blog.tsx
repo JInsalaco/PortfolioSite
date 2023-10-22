@@ -3,7 +3,7 @@ import {Card, Box, CardContent, CardMedia, Typography, Link, Grid, Container} fr
 import { formatTimestamp } from './helpers/helpers';
 import { getAllBlogPosts } from '../../api/get';
 
-export function Blog(){
+export default function Blog(){
     interface blogPost {
         title: string,
         review: string,

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import './App.css';
-import { Header } from './components/Header';
-import { Home } from './components/Home';
-import { Blog } from "./components/Blog/Blog";
-import { BlogPost } from "./components/Blog/BlogPost";
+import Header from './components/Header';
+import HomeContainer from './components/HomeContainer';
+import Blog from "./components/Blog/Blog";
+import BlogPost from "./components/Blog/BlogPost";
+import PublishArticleContainer from './components/PublishArticleContainer';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import CreateArticle from "./components/Publishing/CreateArticle";
 import { ColorModeContext } from './ColorModeContext';
+type muiTheme = 'light' | 'dark'
 function App() {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+  const themePreference = localStorage.getItem('theme') || 'light';
+  const [mode, setMode] = React.useState<muiTheme>(themePreference as muiTheme);
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -19,6 +21,10 @@ function App() {
     }),
     [],
   );
+
+  useEffect(()=>{
+    localStorage.setItem("theme", mode)
+  },[mode]);
 
   const theme = React.useMemo(
     () =>
@@ -37,10 +43,10 @@ function App() {
         <Router>
           <Header/>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<HomeContainer/>} />
             <Route path='/blog' element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost/>} />
-            <Route path="/admin/publish" element={<CreateArticle/>}/>
+            <Route path="/admin/publish" element={<PublishArticleContainer/>}/>
             <Route path="*" element={<Navigate replace to="/"/>}/>
           </Routes>
         </Router>

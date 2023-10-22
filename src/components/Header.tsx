@@ -16,7 +16,7 @@ const menuButtons: {href: string, title: string}[] = [
     }
 ];
 
-export function Header() {
+export default function Header() {
     const theme = useTheme();
     const colorMode = React.useContext(ColorModeContext);
 

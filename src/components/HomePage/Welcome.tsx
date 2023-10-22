@@ -1,5 +1,5 @@
 import { Typography, Stack, Container, Avatar } from "@mui/material";
-import headshot from '../images/headshot.jpeg';
+import headshot from '../../images/headshot.jpeg';
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()(() => ({
