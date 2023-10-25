@@ -48,6 +48,11 @@ function App() {
             color: '#2196f3',
             fontSize: '3rem',
             fontWeight: 'bold',
+          },
+          h1: {
+            '@media (max-width:600px)': {
+              fontSize: '3rem',
+            },
           }
         },
       }),

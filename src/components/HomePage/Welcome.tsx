@@ -8,17 +8,17 @@ export function Welcome() {
                 <Avatar src={headshot} sx={{width:100, height:100}} alt="Headshot of Joseph Insalaco"/>
                 <Grid container justifyContent={'flex-start'} sx={{ml:1}}>
                     <Grid item>
-                            <Typography variant='h1' sx={{fontWeight: 'strong', typography: { xs: {fontSize: '3rem', wordWrap: 'break-word'}}}}>
+                            <Typography variant='h1' sx={{fontWeight: 'strong'}}>
                                 Joseph&nbsp;
                             </Typography>
                     </Grid>
                     <Grid item>
-                            <Typography variant='h1' sx={{fontWeight: 'strong', color: '#2196f3', typography: { xs: {fontSize: '3rem', wordWrap: 'break-word'}}}}>
+                            <Typography variant='h1' sx={{fontWeight: 'strong', color: '#2196f3'}}>
                                 Insalaco
                             </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant='h3' component={'h2'}sx={{ fontWeight: 'strong', fontSize: '1rem', typography: { xs: {wordWrap: 'break-word'}}}}>
+                        <Typography variant='h3' component={'h2'}sx={{ fontWeight: 'strong', fontSize: '1rem'}}>
                             Software Engineer | Full-stack Developer
                         </Typography>
                     </Grid>
