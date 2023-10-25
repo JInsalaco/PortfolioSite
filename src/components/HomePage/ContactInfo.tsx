@@ -1,11 +1,11 @@
-import { Container, Card, List, ListItem, Link} from "@mui/material";
+import { Container, Card, List, ListItem, Link, Typography} from "@mui/material";
 
 export function ContactInfo() {
     return(
-        <Container id='contact-info' sx={{p: 2}}>
-            <div>
-                <h1>Contact Info</h1>
-            </div>
+        <Container id='contact-info' sx={{p: 2, mb:5}}>
+            <Typography variant='h2' sx={{mb:1}}>
+                Contact Info
+            </Typography>
             <Card sx={{p: 1}}>
                 <List>
                     <ListItem>Email: joseph.insalaco1@gmail.com</ListItem>

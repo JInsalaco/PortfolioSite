@@ -31,6 +31,23 @@ function App() {
       createTheme({
         palette: {
           mode,
+          contrastThreshold: 4.5,
+          ...(mode === 'light') ? 
+          {
+            background: {
+              paper: '#e3f2fd',
+            },
+          } : 
+          {
+            
+          },
+        },
+        typography: {
+          h2: {
+            color: '#2196f3',
+            fontSize: '3rem',
+            fontWeight: 'bold',
+          }
         },
       }),
     [mode],

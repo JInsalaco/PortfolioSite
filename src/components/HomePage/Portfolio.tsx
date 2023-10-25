@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Card, Grid, Typography, Stack, Link, useTheme} from "@mui/material";
+import { Container, Card, Grid, Typography, Stack, Link, useTheme, Chip} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 interface technologyCard {
     title: string,
     url: string,
     content: string,
-    technologies: string,
+    technologies: string[],
 }
 export function Portfolio() {
     const theme = useTheme();
@@ -13,19 +13,19 @@ export function Portfolio() {
         title: "Wedd.io",
         url: "https://github.com/JInsalaco/CS554_Good_Nodels",
         content: "Full-stack web application to assist with wedding planning and manage guest lists",
-        technologies: "Node.js, MongoDB, Redis, React, AWS",
+        technologies: ["Node.js", "MongoDB", "Redis", "React", "AWS"],
     },
     {
         title: "The Duck Pond",
         url: "https://github.com/JInsalaco/CS546_Group5",
         content: "Online forum for Stevens students to post questions and start discussions",
-        technologies: "Node.js, MongoDB, Express, Vue",
+        technologies: ["Node.js", 'MongoDB', 'Express', "Vue"],
     },
     {
         title: "Hiragana Tutor",
         url: "https://github.com/JInsalaco/Hiragana-Tutor",
         content: "React single-page application designed to gamify Japanese language learning",
-        technologies: "React",
+        technologies: ["React"],
     },
     ]
     
@@ -33,9 +33,9 @@ export function Portfolio() {
         return cardContent.map((card) => {
             return(
                 <Grid item key={card.title} xs={12} sm={4}>
-                    <Card sx={{p: 2}}>
+                    <Card sx={{p: 2, height:'100%'}}>
                         <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
-                            <Typography>
+                            <Typography variant='h6'>
                                 {card.title}
                             </Typography>
                             <Link href={card.url} target="_blank" rel="noreferrer">
@@ -43,18 +43,20 @@ export function Portfolio() {
                             </Link>
                         </Stack>
                         <Typography sx={{ mb: 1.5 }} variant="body1">{card.content}</Typography>
-                        <Typography variant="body2" color="text.secondary">{card.technologies}</Typography>
+                        {card.technologies.map((technologies, index)=>{
+                            return <Chip key={index} label={technologies} sx={{m:.25}}/>
+                        })}
                     </Card>
                 </Grid>
             )
         })
     }
     return(
-        <Container  id='portfolio' className="portfolio mb-5">
-            <div>
-                <h1>Portfolio</h1>
-            </div>
-            <Grid container spacing={2}>
+        <Container sx={{mb:5}}>
+            <Typography variant='h2' sx={{mb:1}}>
+                Portfolio
+            </Typography>
+            <Grid container spacing={2} alignItems={'stretch'}>
                 {makeCards()}
             </Grid>
         </Container>

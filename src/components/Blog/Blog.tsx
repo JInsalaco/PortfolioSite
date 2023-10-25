@@ -61,7 +61,7 @@ export default function Blog(){
 
     return(
         <Container>
-            {blogPosts ? 
+            {blogPosts?.length > 0 ? 
             <Grid container spacing={6}>
                 {buildCards()}
             </Grid>

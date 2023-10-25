@@ -7,7 +7,7 @@ import { getBlogPost } from '../../api/get';
 export default function BlogPost(){
     interface blog {
         title: string,
-        review: string,
+        body: string,
         createdBy: string,
         createdOn: Date,
         photo: string,
@@ -41,27 +41,25 @@ export default function BlogPost(){
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <Typography component="div" variant="h1">
-                                {post.title}
+                                {post?.title}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
                             <Typography component="div" variant="subtitle1">
-                                by {post.createdBy} | {formatTimestamp(post.createdOn)}
+                                by {post?.createdBy} | {formatTimestamp(post?.createdOn)}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
                             <hr/>
                         </Grid>
                         <Grid item xs={12}>
-                            <img alt="" src={post.photo} width="854" height="480"/>
+                            <img alt="" src={post?.photo} width="854" height="480"/>
                         </Grid>
                         <Grid item xs={12}>
                             <hr/>
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography component="div" variant="body1">
-                                {post.review}
-                            </Typography>
+                            <div dangerouslySetInnerHTML={{ __html: post?.body }} />
                         </Grid>
                     </Grid>
                 </Container>

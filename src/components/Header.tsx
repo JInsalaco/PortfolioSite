@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton} from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Typography} from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -63,14 +63,13 @@ export default function Header() {
     })
     
     return(
-        <AppBar sx={{mb:5}} position="static">
-            
+        <AppBar sx={{mb:5}} position="sticky">
             <Toolbar sx={{justifyContent: 'flex-end'}}>
-                <>
+                <Typography variant="h6" component="a" href='/' sx={{ flexGrow: 1, color: 'inherit', textDecoration: 'none' }}>
+                    Joseph Insalaco
+                </Typography>
                 {showMenuButtons()}
                 {themeToggle()}
-                </>
-                
             </Toolbar>
         </AppBar>
     );

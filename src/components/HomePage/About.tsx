@@ -1,11 +1,11 @@
-import { Container, Card, Link } from "@mui/material";
+import { Container, Card, Link, Typography } from "@mui/material";
 
 export function About(){
     return(
-        <Container id='about' className="about mb-5">
-            <div>
-                <h1>About Me</h1>
-            </div>
+        <Container id='about' sx={{mb:5}}>
+            <Typography variant='h2' sx={{mb:1}}>
+                About Me
+            </Typography>
             <Card sx={{p: 2}}>
                 <p>
                     I am a current software engineer at Bank of America. I hold a B.E. in Computer
