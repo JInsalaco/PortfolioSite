@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ColorModeContext } from './ColorModeContext';
+import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import Header from './components/Header';
 import HomeContainer from './components/HomeContainer';
 import Blog from "./components/Blog/Blog";
 import BlogPost from "./components/Blog/BlogPost";
 import PublishArticleContainer from './components/PublishArticleContainer';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ColorModeContext } from './ColorModeContext';
+
 type muiTheme = 'light' | 'dark'
 function App() {
   const themePreference = localStorage.getItem('theme') || 'light';
