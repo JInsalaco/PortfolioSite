@@ -38,7 +38,7 @@ export function Portfolio() {
                             <Typography variant='h6'>
                                 {card.title}
                             </Typography>
-                            <Link href={card.url} target="_blank" rel="noreferrer">
+                            <Link href={card.url} target="_blank" rel="noreferrer" aria-label={`Link to ${card.title} GitHub repository`}>
                                 <GitHubIcon sx={theme.palette.mode === 'light' ? {color:'black'} : {color:'white'}}/>
                             </Link>
                         </Stack>

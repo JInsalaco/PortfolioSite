@@ -51,6 +51,7 @@ export default function Header() {
                     sx={{ ml: 1 }}
                     onClick={colorMode.toggleColorMode}
                     color="inherit"
+                    aria-label='Dark mode toggle button'
                 >
                     {theme.palette.mode === 'dark' ? (
                     <Brightness7Icon />
