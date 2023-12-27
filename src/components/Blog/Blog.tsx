@@ -6,10 +6,10 @@ import { getAllBlogPosts } from '../../api/get';
 export default function Blog(){
     interface blogPost {
         title: string,
-        review: string,
+        body: string,
         createdBy: string,
         createdOn: Date,
-        photo: string,
+        image: string,
         _id: string,
     }
     const [blogPosts, setBlogPosts] = useState<blogPost[]>([]);
@@ -35,7 +35,7 @@ export default function Blog(){
                             <CardMedia
                             sx={{ width: 250 }}
                             component="img"
-                            image={blogPost.photo}
+                            src={blogPost.image}
                             height="194"/>
                         </Link>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }}>

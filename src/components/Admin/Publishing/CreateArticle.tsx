@@ -1,6 +1,8 @@
 import { Grid, Card, Button, TextField, FormControl } from "@mui/material";
 import { useForm, SubmitHandler,Controller} from "react-hook-form";
 import TextEditor from "./TextEditor";
+import { useAuth } from "../../../firebase/firebaseAuth";
+import { createBlogPost } from "../../../api/post";
 
 interface IFormInput {
     title: string;
@@ -9,8 +11,11 @@ interface IFormInput {
 
 const CreateArticle = () => {
     const { control, handleSubmit } = useForm<IFormInput>();
-    
-    const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+    const {user} = useAuth();
+    const onSubmit: SubmitHandler<IFormInput> = async(data) => {
+        const token = await user?.getIdToken();
+        createBlogPost(data.title,data.articleBody,'',token);
+    };
 
     return(
         <Card sx={{p:2}}>

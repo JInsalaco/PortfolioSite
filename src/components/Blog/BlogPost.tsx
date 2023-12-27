@@ -10,7 +10,7 @@ export default function BlogPost(){
         body: string,
         createdBy: string,
         createdOn: Date,
-        photo: string,
+        image: string,
         _id: string,
     }
     
@@ -53,7 +53,7 @@ export default function BlogPost(){
                             <hr/>
                         </Grid>
                         <Grid item xs={12}>
-                            <img alt="" src={post?.photo} width="854" height="480"/>
+                            <img alt="" src={post?.image} style={{width: '100%'}}/>
                         </Grid>
                         <Grid item xs={12}>
                             <hr/>

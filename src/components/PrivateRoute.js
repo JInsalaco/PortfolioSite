@@ -6,7 +6,9 @@ const PrivateRoute = () => {
 
   // If authorized, return an outlet that will render child elements
   // If not, return element that will navigate to home page
-  return user ? <Outlet /> : <Navigate to='/' />;
+  if(user){
+    return <Outlet/>;
+  }
+  return <Navigate to='/' />;
 };
-
 export default PrivateRoute;

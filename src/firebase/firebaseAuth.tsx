@@ -34,22 +34,32 @@ export function useAuth(): AuthContextModel {
 
 export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
   const [user, setUser] = useState<User | null>(null)
+  const [loadingUser, setLoadingUser] = useState(true);
 
-  function signIn(email: string, password: string): Promise<UserCredential> {
-    return signInWithEmailAndPassword(auth, email, password)
+  async function signIn(email: string, password: string): Promise<UserCredential> {
+    setLoadingUser(true);
+    return await signInWithEmailAndPassword(auth, email, password)
   }
 
-  function logOut(): Promise<void> {
+  async function logOut(): Promise<void> {
+    setLoadingUser(true);
     return signOut(auth);
   }
 
   useEffect(() => {
-    const unsubsrcibe = auth.onAuthStateChanged((user) => {
-      setUser(user)
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+      setLoadingUser(false);
     })
-    return unsubsrcibe
   }, [])
 
+  if (loadingUser) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
   const values = {
     user,
     signIn,
