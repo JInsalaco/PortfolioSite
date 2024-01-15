@@ -7,7 +7,6 @@ import React, {
 import { auth } from './firebaseConfig'
 import {
   Auth,
-  UserCredential,
   User,
   signInWithEmailAndPassword,
   signOut,
@@ -20,7 +19,7 @@ export interface AuthProviderProps {
 export interface AuthContextModel {
   auth: Auth
   user: User | null
-  signIn: (email: string, password: string) => Promise<UserCredential>
+  signIn: (email: string, password: string) => Promise<void>
   logOut: () => Promise<void>
 }
 
@@ -36,13 +35,11 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
   const [user, setUser] = useState<User | null>(null)
   const [loadingUser, setLoadingUser] = useState(true);
 
-  async function signIn(email: string, password: string): Promise<UserCredential> {
-    setLoadingUser(true);
-    return await signInWithEmailAndPassword(auth, email, password)
+  async function signIn(email: string, password: string): Promise<void> {
+    await signInWithEmailAndPassword(auth, email, password)
   }
 
   async function logOut(): Promise<void> {
-    setLoadingUser(true);
     return signOut(auth);
   }
 
@@ -53,18 +50,11 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
     })
   }, [])
 
-  if (loadingUser) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
   const values = {
     user,
     signIn,
     logOut,
     auth,
   }
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={values}>{!loadingUser && children}</AuthContext.Provider>
 }
