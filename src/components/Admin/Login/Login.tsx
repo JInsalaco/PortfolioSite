@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm, SubmitHandler, Controller} from "react-hook-form";
 import { Button, TextField, FormControl, Grid, Typography, FormHelperText } from "@mui/material";
 import { useAuth } from "../../../firebase/firebaseAuth"
-import { getAuth } from "firebase/auth";
 
 interface IFormInput {
     email: string;

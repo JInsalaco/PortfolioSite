@@ -3,18 +3,26 @@ import { useForm, SubmitHandler,Controller} from "react-hook-form";
 import TextEditor from "./TextEditor";
 import { useAuth } from "../../../firebase/firebaseAuth";
 import { createBlogPost } from "../../../api/post";
-
+import { useNavigate } from "react-router-dom";
 interface IFormInput {
     title: string;
+    url: string;
     articleBody: string;
   }
 
 const CreateArticle = () => {
     const { control, handleSubmit } = useForm<IFormInput>();
     const {user} = useAuth();
+    const navigate = useNavigate();
+
     const onSubmit: SubmitHandler<IFormInput> = async(data) => {
         const token = await user?.getIdToken();
-        createBlogPost(data.title,data.articleBody,'',token);
+        try{
+            createBlogPost(data.title,data.url,data.articleBody,token);
+            navigate('/admin');
+        } catch(e) {
+            console.error(e);
+        }
     };
 
     return(
@@ -30,6 +38,21 @@ const CreateArticle = () => {
                         }
                         name="title"
                         control={control}
+                        defaultValue=""
+                        rules={{ required: true }}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controller
+                        render={({ field }) =>
+                            <FormControl fullWidth>
+                                <TextField label='Photo Link' variant="outlined" fullWidth {...field} />                
+                            </FormControl>
+                        }
+                        name="url"
+                        control={control}
+                        defaultValue=""
+                        rules={{ required: true }}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -44,6 +67,7 @@ const CreateArticle = () => {
                         }
                         name='articleBody'
                         control={control}
+                        rules={{ required: true }}
                         /> 
                     </Grid>
                     <Grid item xs={12}>
