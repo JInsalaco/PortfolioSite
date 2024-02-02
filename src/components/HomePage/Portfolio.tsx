@@ -22,10 +22,10 @@ export function Portfolio() {
         technologies: ["Node.js", 'MongoDB', 'Express', "Vue"],
     },
     {
-        title: "Hiragana Tutor",
-        url: "https://github.com/JInsalaco/Hiragana-Tutor",
-        content: "React single-page application designed to gamify Japanese language learning",
-        technologies: ["React"],
+        title: "React Native Blackjack",
+        url: "https://github.com/JInsalaco/Blackjack",
+        content: "React Native application that simulates a game of blackjack",
+        technologies: ["React Native, Typescript"],
     },
     ]
     
