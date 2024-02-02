@@ -25,7 +25,7 @@ export function Portfolio() {
         title: "React Native Blackjack",
         url: "https://github.com/JInsalaco/Blackjack",
         content: "React Native application that simulates a game of blackjack",
-        technologies: ["React Native, Typescript"],
+        technologies: ["React Native" , "Typescript"],
     },
     ]
     
