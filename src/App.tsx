@@ -12,6 +12,7 @@ import BlogPost from "./components/Blog/BlogPost";
 import PublishArticleContainer from './components/Admin/PublishArticleContainer';
 import LoginContainer from './components/Admin/LoginContainer';
 import PrivateRoute  from './components/PrivateRoute';
+import WillYou from './components/Fun/WillYou';
 
 type muiTheme = 'light' | 'dark'
 function App(): JSX.Element {
@@ -84,6 +85,7 @@ function App(): JSX.Element {
             <Route path="/admin/publish" element={<PrivateRoute />}>
               <Route path="/admin/publish" element={<PublishArticleContainer/>}/>
             </Route>
+            <Route path='/admin/fun' element={<WillYou/>}/>
             <Route path="*" element={<Navigate replace to="/"/>}/>
           </Routes>
         </Router>
