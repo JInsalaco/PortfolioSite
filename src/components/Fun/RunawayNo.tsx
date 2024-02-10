@@ -1,8 +1,7 @@
-import { Dangerous } from "@mui/icons-material";
 import { Button } from "@mui/material"
 import { useState } from "react";
 const RunawayNo = () => {
-    const maxHeight = window.innerHeight - 200;
+    const maxHeight = window.innerHeight - 400;
     const maxWidth = window.innerWidth - 200;
     const [left,setLeft] = useState(0);
     const [top,setTop] = useState(0)
