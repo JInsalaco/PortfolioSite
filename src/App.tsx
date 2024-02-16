@@ -13,6 +13,7 @@ import PublishArticleContainer from './components/Admin/PublishArticleContainer'
 import LoginContainer from './components/Admin/LoginContainer';
 import PrivateRoute  from './components/PrivateRoute';
 import WillYou from './components/Fun/WillYou';
+import Resume from './components/Resume/Resume';
 
 type muiTheme = 'light' | 'dark'
 function App(): JSX.Element {
@@ -86,6 +87,7 @@ function App(): JSX.Element {
               <Route path="/admin/publish" element={<PublishArticleContainer/>}/>
             </Route>
             <Route path='/admin/fun' element={<WillYou/>}/>
+            <Route path='/resume' element={<Resume/>}/>
             <Route path="*" element={<Navigate replace to="/"/>}/>
           </Routes>
         </Router>

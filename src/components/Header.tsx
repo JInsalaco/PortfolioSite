@@ -11,9 +11,13 @@ const menuButtons: {href: string, title: string}[] = [
         title: 'Home'
     },
     {
+        href: '/resume',
+        title: 'Resume',
+    },
+    {
         href: '/blog',
         title: "Blog",
-    }
+    },
 ];
 
 export default function Header() {
