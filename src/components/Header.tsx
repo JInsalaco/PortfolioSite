@@ -111,7 +111,7 @@ export default function Header() {
                 >
                 {menuButtons.map(({title, href}) => (
                     <MenuItem key={title} onClick={handleCloseNavMenu}>
-                        <Typography component="a" href='/' textAlign="center">{title}</Typography>
+                        <Typography component="a" href={href} textAlign="center">{title}</Typography>
                     </MenuItem>
                 ))}
                 </Menu>
