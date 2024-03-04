@@ -38,22 +38,19 @@ export default function BlogPost(){
                 <Skeleton variant="rectangular" height={600}/> 
             :
                 <Container>
-                    <Grid container spacing={2}>
+                    <Grid container spacing={2} sx={{mb:4}}>
                         <Grid item xs={12}>
-                            <Typography component="div" variant="h1">
+                            <img alt="" src={post?.image} style={{width: '100%', borderRadius: '8px'}}/>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Typography component="div" variant="h3" fontWeight={'bold'}>
                                 {post?.title}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography component="div" variant="subtitle1">
+                            <Typography component="div" variant="subtitle1" sx={{color: '#C7C7CD'}}>
                                 by {post?.createdBy} | {formatTimestamp(post?.createdOn)}
                             </Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <hr/>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <img alt="" src={post?.image} style={{width: '100%'}}/>
                         </Grid>
                         <Grid item xs={12}>
                             <hr/>

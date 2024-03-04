@@ -30,10 +30,9 @@ export default function Blog(){
          return blogPosts.map((blogPost) => {
             return (
                 <Grid key={blogPost._id} item xs={6}>
-                    <Card sx={{ display: 'flex', maxWidth: '50rem' }}>
+                    <Card sx={{ maxWidth: '50rem' }}>
                         <Link href={`/blog/${blogPost._id}`}>
                             <CardMedia
-                            sx={{ width: 250 }}
                             component="img"
                             src={blogPost.image}
                             height="194"/>
@@ -48,7 +47,7 @@ export default function Blog(){
                                 <Typography component="div" variant={'subtitle1'}>
                                     By {blogPost.createdBy}
                                 </Typography>
-                                <Typography component="div" variant={'subtitle2'}>
+                                <Typography component="div" variant={'subtitle2'} sx={{color: '#C7C7CD'}}>
                                     {formatTimestamp(blogPost.createdOn)}
                                 </Typography>
                             </CardContent>
