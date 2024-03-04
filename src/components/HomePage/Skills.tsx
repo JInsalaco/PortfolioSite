@@ -36,7 +36,7 @@ export function Skills(){
             return(
                 <Grid item key={card.skill} xs={12} sm={4}>
                     <Card sx={{height:'100%'}}>
-                        <CardActionArea sx={{display: 'flex', alignItems: 'center', justifyContent:'center'}}>
+                        <CardActionArea sx={{display: 'flex', alignItems: 'center', justifyContent:'center'}} disabled>
                             <CardContent>
                                 <Typography className={card.icon}/>
                                 <Typography align='center' variant="body1">{card.skill}</Typography>

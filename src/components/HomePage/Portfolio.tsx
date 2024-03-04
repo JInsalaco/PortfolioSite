@@ -35,11 +35,11 @@ export function Portfolio() {
                 <Grid item key={card.title} xs={12} sm={4}>
                     <Card sx={{p: 2, height:'100%'}}>
                         <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
-                            <Typography variant='h6'>
+                            <Typography variant='h6' fontWeight={'bold'}>
                                 {card.title}
                             </Typography>
                             <Link href={card.url} target="_blank" rel="noreferrer" aria-label={`Link to ${card.title} GitHub repository`}>
-                                <GitHubIcon sx={theme.palette.mode === 'light' ? {color:'black'} : {color:'white'}}/>
+                                <GitHubIcon sx={theme.palette.mode === 'light' ? {color:'black'} : {color:'white'}} fontSize='large'/>
                             </Link>
                         </Stack>
                         <Typography sx={{ mb: 1.5 }} variant="body1">{card.content}</Typography>
