@@ -7,12 +7,12 @@ interface skillCard {
 export function Skills(){
     const cardContent:skillCard[] = [
         {
-        skill: 'Node.js',
-        icon: 'ib mdi-nodejs',
-        },
-        {
         skill: 'React.js',
         icon: 'ib mdi-react',
+        },
+        {
+        skill: 'Node.js',
+        icon: 'ib mdi-nodejs',
         },
         {
         skill: 'Next.js',
@@ -36,7 +36,7 @@ export function Skills(){
             return(
                 <Grid item key={card.skill} xs={12} sm={4}>
                     <Card sx={{height:'100%'}}>
-                        <CardActionArea sx={{display: 'flex', alignItems: 'center', justifyContent:'center'}} disabled>
+                        <CardActionArea sx={{display: 'flex', alignItems: 'center', justifyContent:'center'}}>
                             <CardContent>
                                 <Typography className={card.icon}/>
                                 <Typography align='center' variant="body1">{card.skill}</Typography>

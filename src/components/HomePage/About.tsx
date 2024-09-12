@@ -8,19 +8,10 @@ export function About(){
             </Typography>
             <Card sx={{p: 2}}>
                 <p>
-                    I am a current software engineer at Bank of America. I hold a B.E. in Computer
-                    Engineering, and a M.S. in Computer Science from Stevens Institute of Technology.
+                    I am a full-stack web developer based in New York City and currently working at Bank of America. I have over 5 years of experience in React, Node.js, Java, MongoDB, Express, Redis, and AWS.
                 </p>
                 <p>
-                    I am a passionate programmer with experience with several technologies including but not limited to
-                    Node.js, MongoDB, PostgreSQL, Express, React, Redis, AWS, and more.
-                </p>
-                <p>
-                    Outside of work I enjoy cooking, baking, and lifting. I am also a passionate
-                    foodie and I love exploring new restaurants.
-                </p>
-                <p>
-                    Please check out <Link href="/resume">my resume</Link> for more information
+                    Please check out <Link href="/resume">my resume</Link> for more information on my skillset and work projects.
                 </p>
             </Card>
         </Container>

@@ -13,7 +13,7 @@ export function Portfolio() {
         title: "Wedd.io",
         url: "https://github.com/JInsalaco/CS554_Good_Nodels",
         content: "Full-stack web application to assist with wedding planning and manage guest lists",
-        technologies: ["Node.js", "MongoDB", "Redis", "React", "AWS"],
+        technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
     },
     {
         title: "The Duck Pond",

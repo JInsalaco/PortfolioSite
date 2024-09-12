@@ -7,7 +7,7 @@ import { Skills } from './Skills';
 
 export default function HomeContainer() {
     return(
-        <Container>
+        <Container maxWidth={'xl'} sx={{height:'100%'}}>
             <Welcome/>
             <About/>
             <Skills/>

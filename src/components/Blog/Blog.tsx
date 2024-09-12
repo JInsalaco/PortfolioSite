@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Card, Box, CardContent, CardMedia, Typography, Link, Grid, Container} from '@mui/material';
+import {Card, Box, CardContent, CardMedia, Typography, Link, Grid, Container, Skeleton} from '@mui/material';
 import { formatTimestamp } from './helpers/helpers';
 import { getAllBlogPosts } from '../../api/get';
 
@@ -60,13 +60,20 @@ export default function Blog(){
 
     return(
         <Container>
-            {blogPosts?.length > 0 ? 
             <Grid container spacing={6}>
-                {buildCards()}
+                {blogPosts?.length ?
+                buildCards()
+                :
+                <>
+                <Grid item xs={6}>
+                    <Skeleton variant="rectangular" width={'30rem'} height={'15rem'} animation="wave"/>
+                </Grid>
+                <Grid item xs={6}>
+                    <Skeleton variant="rectangular" width={'30rem'} height={'15rem'} animation="wave"/>
+                </Grid>
+                </>
+                }
             </Grid>
-            :
-            <Typography align='center' component={'div'}>Content coming soon!</Typography>
-            }
         </Container>
     );
 }

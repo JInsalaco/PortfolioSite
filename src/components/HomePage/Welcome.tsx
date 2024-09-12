@@ -1,4 +1,4 @@
-import { Typography, Stack, Container, Avatar, Grid } from "@mui/material";
+import { Typography, Stack, Container, Avatar, Grid, Chip } from "@mui/material";
 import headshot from '../../images/headshot.jpeg';
 
 export function Welcome() {
@@ -19,12 +19,11 @@ export function Welcome() {
                     </Grid>
                     <Grid item xs={12}>
                         <Typography variant='h3' component={'h2'}sx={{ fontWeight: 'strong', fontSize: '1rem'}}>
-                            Software Engineer | Full-stack Developer
+                            <Chip sx={{m:.25}} label={'Full-stack Developer'}/><Chip sx={{m:.25}} label={'New York City'}/>
                         </Typography>
                     </Grid>
                 </Grid>
             </Stack>
         </Container>
-        
     )
 }

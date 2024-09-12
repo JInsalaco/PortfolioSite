@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Typography, Menu, MenuItem} from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Typography, Menu, MenuItem, Link} from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { useTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -111,7 +111,7 @@ export default function Header() {
                 >
                 {menuButtons.map(({title, href}) => (
                     <MenuItem key={title} onClick={handleCloseNavMenu}>
-                        <Typography component="a" href={href} textAlign="center">{title}</Typography>
+                        <Link href={href} textAlign="center">{title}</Link>
                     </MenuItem>
                 ))}
                 </Menu>
