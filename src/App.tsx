@@ -3,16 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ColorModeContext } from './ColorModeContext';
-import { AuthProvider } from './firebase/firebaseAuth';
 import CssBaseline from '@mui/material/CssBaseline';
 import Header from './components/Header';
 import HomeContainer from './components/HomePage/HomeContainer';
-import Blog from "./components/Blog/Blog";
-import BlogPost from "./components/Blog/BlogPost";
-import PublishArticleContainer from './components/Admin/PublishArticleContainer';
-import LoginContainer from './components/Admin/LoginContainer';
-import PrivateRoute  from './components/PrivateRoute';
-import WillYou from './components/Fun/WillYou';
 import Resume from './components/Resume/Resume';
 
 type muiTheme = 'light' | 'dark'
@@ -72,7 +65,6 @@ function App(): JSX.Element {
   );
   
   return (
-    <AuthProvider>
       <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
@@ -80,20 +72,12 @@ function App(): JSX.Element {
           <Header/>
           <Routes>
             <Route path="/" element={<HomeContainer/>} />
-            <Route path='/blog' element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost/>} />
-            <Route path="/admin" element={<LoginContainer/>}/>
-            <Route path="/admin/publish" element={<PrivateRoute />}>
-              <Route path="/admin/publish" element={<PublishArticleContainer/>}/>
-            </Route>
-            <Route path='/admin/fun' element={<WillYou/>}/>
             <Route path='/resume' element={<Resume/>}/>
             <Route path="*" element={<Navigate replace to="/"/>}/>
           </Routes>
         </Router>
       </ThemeProvider>
       </ColorModeContext.Provider>
-    </AuthProvider>
   );
 }
 

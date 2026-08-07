@@ -15,10 +15,6 @@ const menuButtons: {href: string, title: string}[] = [
         href: '/resume',
         title: 'Resume',
     },
-    {
-        href: '/blog',
-        title: "Blog",
-    },
 ];
 
 export default function Header() {
