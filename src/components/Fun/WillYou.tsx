@@ -1,44 +1,36 @@
-import { useState } from "react";
-import { Button, Grid, Typography} from "@mui/material"
-import RunawayNo from "./RunawayNo"
+import { useState } from 'react';
+import { Button } from 'components/ui/button';
+import RunawayNo from './RunawayNo';
 
 const WillYou = () => {
-    const [image,setImage] = useState('https://media.tenor.com/hBK9Al_tgq4AAAAM/cute-cat-couple.gif');
-    const [text,setText] = useState('Will you be my Valentine?')
-    const [showButton,setShowButton] = useState(true);
+  const [image, setImage] = useState('https://media.tenor.com/hBK9Al_tgq4AAAAM/cute-cat-couple.gif');
+  const [text, setText] = useState('Will you be my Valentine?');
+  const [showButton, setShowButton] = useState(true);
 
-    const handleYes = () => {
-        setShowButton(false);
-        setText("WOOHOO");
-        setImage('https://media1.tenor.com/m/28G0EVh-CKkAAAAC/cute-cat.gif');
-    }
-    return (
-        <Grid container 
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        >
-            <Grid item xs={12}>
-                <Typography align="center" sx={{mb:4, color: 'black'}} variant="h2">{text}</Typography>
-            </Grid>
-            <Grid item xs={12}>
-                <img src={image}/>
-            </Grid>
-            {showButton && 
-            <Grid item xs={12}>
-                <Button 
-                variant='contained'
-                size="large"
-                style={{backgroundColor: 'pink', color: 'black', margin: 4}} 
-                onClick={handleYes}
-                >
-                    Yes
-                </Button>
-                <RunawayNo/>
-            </Grid>
-            }
-        </Grid>
-    )
-}
+  const handleYes = () => {
+    setShowButton(false);
+    setText('WOOHOO');
+    setImage('https://media1.tenor.com/m/28G0EVh-CKkAAAAC/cute-cat.gif');
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="mb-4 text-center text-4xl font-bold text-black">{text}</h2>
+      <img src={image} alt="" />
+      {showButton && (
+        <div className="mt-1">
+          <Button
+            size="lg"
+            className="m-1 bg-pink-400 text-black hover:bg-pink-500"
+            onClick={handleYes}
+          >
+            Yes
+          </Button>
+          <RunawayNo />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default WillYou;
