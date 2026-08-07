@@ -1,64 +1,64 @@
-import React from 'react';
-import { Container, Card, Grid, Typography, Stack, Link, useTheme, Chip} from "@mui/material";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { GithubIcon } from 'components/icons';
+import { Card, CardContent } from 'components/ui/card';
+import { Badge } from 'components/ui/badge';
+
 interface technologyCard {
-    title: string,
-    url: string,
-    content: string,
-    technologies: string[],
+  title: string;
+  url: string;
+  content: string;
+  technologies: string[];
 }
+
 export function Portfolio() {
-    const theme = useTheme();
-    const cardContent:technologyCard[] = [{
-        title: "Wedd.io",
-        url: "https://github.com/JInsalaco/CS554_Good_Nodels",
-        content: "Full-stack web application to assist with wedding planning and manage guest lists",
-        technologies: ["React", "Node.js", "MongoDB", "Redis", "AWS"],
+  const cardContent: technologyCard[] = [
+    {
+      title: 'Wedd.io',
+      url: 'https://github.com/JInsalaco/CS554_Good_Nodels',
+      content: 'Full-stack web application to assist with wedding planning and manage guest lists',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Redis', 'AWS'],
     },
     {
-        title: "The Duck Pond",
-        url: "https://github.com/JInsalaco/CS546_Group5",
-        content: "Online forum for Stevens students to post questions and start discussions",
-        technologies: ["Node.js", 'MongoDB', 'Express', "Vue"],
+      title: 'The Duck Pond',
+      url: 'https://github.com/JInsalaco/CS546_Group5',
+      content: 'Online forum for Stevens students to post questions and start discussions',
+      technologies: ['Node.js', 'MongoDB', 'Express', 'Vue'],
     },
     {
-        title: "React Native Blackjack",
-        url: "https://github.com/JInsalaco/Blackjack",
-        content: "React Native application that simulates a game of blackjack",
-        technologies: ["React Native" , "Typescript"],
+      title: 'React Native Blackjack',
+      url: 'https://github.com/JInsalaco/Blackjack',
+      content: 'React Native application that simulates a game of blackjack',
+      technologies: ['React Native', 'Typescript'],
     },
-    ]
-    
-    const makeCards = () => {
-        return cardContent.map((card) => {
-            return(
-                <Grid item key={card.title} xs={12} sm={4}>
-                    <Card sx={{p: 2, height:'100%'}}>
-                        <Stack direction="row" justifyContent={"space-between"} sx={{ mb: 1.5 }}>
-                            <Typography variant='h6' fontWeight={'bold'}>
-                                {card.title}
-                            </Typography>
-                            <Link href={card.url} target="_blank" rel="noreferrer" aria-label={`Link to ${card.title} GitHub repository`}>
-                                <GitHubIcon sx={theme.palette.mode === 'light' ? {color:'black'} : {color:'white'}} fontSize='large'/>
-                            </Link>
-                        </Stack>
-                        <Typography sx={{ mb: 1.5 }} variant="body1">{card.content}</Typography>
-                        {card.technologies.map((technologies, index)=>{
-                            return <Chip key={index} label={technologies} sx={{m:.25}}/>
-                        })}
-                    </Card>
-                </Grid>
-            )
-        })
-    }
-    return(
-        <Container sx={{mb:5}}>
-            <Typography variant='h2' sx={{mb:1}}>
-                Portfolio
-            </Typography>
-            <Grid container spacing={2} alignItems={'stretch'}>
-                {makeCards()}
-            </Grid>
-        </Container>
-    )
+  ];
+
+  return (
+    <div className="mb-5">
+      <h2 className="mb-2 text-3xl font-bold text-primary">Portfolio</h2>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {cardContent.map((card) => (
+          <Card key={card.title} className="h-full">
+            <CardContent className="p-4">
+              <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-lg font-bold">{card.title}</h3>
+                <a
+                  href={card.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Link to ${card.title} GitHub repository`}
+                >
+                  <GithubIcon className="h-7 w-7" />
+                </a>
+              </div>
+              <p className="mb-3">{card.content}</p>
+              {card.technologies.map((technology, index) => (
+                <Badge key={index} variant="secondary" className="m-0.5">
+                  {technology}
+                </Badge>
+              ))}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
 }

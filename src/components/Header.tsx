@@ -1,126 +1,77 @@
-import React from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Typography, Menu, MenuItem, Link} from '@mui/material';
-import { Link as RouterLink } from "react-router-dom";
-import { useTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import MenuIcon from '@mui/icons-material/Menu';
-import { ColorModeContext } from '../ColorModeContext';
-const menuButtons: {href: string, title: string}[] = [
-    {
-        href: '/',
-        title: 'Home'
-    },
-    {
-        href: '/resume',
-        title: 'Resume',
-    },
+import { Link as RouterLink } from 'react-router-dom';
+import { Menu, Moon, Sun } from 'lucide-react';
+import { Button } from 'components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from 'components/ui/sheet';
+import { useTheme } from 'components/theme-provider';
+
+const menuButtons: { href: string; title: string }[] = [
+  {
+    href: '/',
+    title: 'Home',
+  },
+  {
+    href: '/resume',
+    title: 'Resume',
+  },
 ];
 
 export default function Header() {
-    const theme = useTheme();
-    const colorMode = React.useContext(ColorModeContext);
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const showMenuButtons = () => {
-         return menuButtons.map(({title, href}) => {
-            return(
-                <Button
-                 key={title}
-                 color='inherit'
-                 to={href}
-                 component={RouterLink}
-                 sx={{ml:1}}
-                >
+  return (
+    <header className="sticky top-0 z-40 mb-5 w-full border-b bg-primary text-primary-foreground shadow">
+      <div className="container flex h-16 items-center justify-end gap-1">
+        <div className="flex md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" aria-label="Open navigation menu">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+              <SheetTitle>Navigation</SheetTitle>
+              <nav className="mt-6 flex flex-col gap-2">
+                {menuButtons.map(({ title, href }) => (
+                  <RouterLink
+                    key={title}
+                    to={href}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent"
+                  >
                     {title}
-                </Button>
-            )
-        })
-    }
-
-    const themeToggle = (()=>{
-        return (
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'text.primary',
-                    borderRadius: 1,
-                }}
-                >
-                <IconButton
-                    sx={{ ml: 1 }}
-                    onClick={colorMode.toggleColorMode}
-                    color="inherit"
-                    aria-label='Dark mode toggle button'
-                >
-                    {theme.palette.mode === 'dark' ? (
-                    <Brightness7Icon />
-                    ) : (
-                    <Brightness4Icon />
-                    )}
-                </IconButton>
-            </Box>
-        )
-    })
-    
-    return(
-        <AppBar sx={{mb:5}} position="sticky">
-            <Toolbar sx={{justifyContent: 'flex-end'}}>
-                <Box sx={{display: { xs: 'flex', md: 'none' } }}>
-                <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorElNav}
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                    open={Boolean(anchorElNav)}
-                    onClose={handleCloseNavMenu}
-                    sx={{
-                        display: { xs: 'block', md: 'none' },
-                    }}
-                >
-                {menuButtons.map(({title, href}) => (
-                    <MenuItem key={title} onClick={handleCloseNavMenu}>
-                        <Link href={href} textAlign="center">{title}</Link>
-                    </MenuItem>
+                  </RouterLink>
                 ))}
-                </Menu>
-                </Box>
-                <Typography variant="h6" component="a" href='/' sx={{ flexGrow: 1, color: 'inherit', textDecoration: 'none' }}>
-                    Joseph Insalaco
-                </Typography>
-                <Box sx={{display: { xs: 'none', md: 'flex' } }}>
-                    {showMenuButtons()}
-                </Box>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
 
-                {themeToggle()}
-            </Toolbar>
-        </AppBar>
-    );
+        <RouterLink to="/" className="mr-auto text-lg font-semibold text-primary-foreground no-underline">
+          Joseph Insalaco
+        </RouterLink>
+
+        <nav className="hidden md:flex">
+          {menuButtons.map(({ title, href }) => (
+            <Button
+              key={title}
+              asChild
+              variant="ghost"
+              className="ml-1 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              <RouterLink to={href}>{title}</RouterLink>
+            </Button>
+          ))}
+        </nav>
+
+        <Button
+          size="icon"
+          variant="ghost"
+          className="ml-1 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+          onClick={toggleTheme}
+          aria-label="Dark mode toggle button"
+        >
+          {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        </Button>
+      </div>
+    </header>
+  );
 }
