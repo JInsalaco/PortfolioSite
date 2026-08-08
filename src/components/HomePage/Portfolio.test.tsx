@@ -16,6 +16,7 @@ describe('Portfolio', () => {
       const link = screen.getByRole('link', { name: `Link to ${title} GitHub repository` });
       expect(link).toHaveAttribute('href', url);
       expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     });
   });
 
