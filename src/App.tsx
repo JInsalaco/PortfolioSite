@@ -4,7 +4,7 @@ import Header from './components/Header';
 import HomeContainer from './components/HomePage/HomeContainer';
 import Resume from './components/Resume/Resume';
 
-function App(): JSX.Element {
+function App() {
   return (
     <ThemeProvider>
       <Router>
