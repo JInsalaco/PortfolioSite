@@ -43,7 +43,7 @@ export function Portfolio() {
                 <a
                   href={card.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={`Link to ${card.title} GitHub repository`}
                 >
                   <GithubIcon className="h-7 w-7" />

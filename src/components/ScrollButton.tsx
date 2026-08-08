@@ -11,10 +11,11 @@ export default function ScrollButton() {
 
   React.useEffect(() => {
     const handleButtonVisibility = () => {
-      window.scrollY > 300 ? setIsButtonVisible(true) : setIsButtonVisible(false);
+      setIsButtonVisible(window.scrollY > 300);
     };
     window.addEventListener('scroll', handleButtonVisibility);
-  });
+    return () => window.removeEventListener('scroll', handleButtonVisibility);
+  }, []);
 
   return (
     <>
