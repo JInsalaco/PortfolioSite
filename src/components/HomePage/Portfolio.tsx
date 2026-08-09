@@ -24,10 +24,10 @@ export function Portfolio() {
       technologies: ['Node.js', 'MongoDB', 'Express', 'Vue'],
     },
     {
-      title: 'React Native Blackjack',
+      title: 'Python Blackjack',
       url: 'https://github.com/JInsalaco/Blackjack',
-      content: 'React Native application that simulates a game of blackjack',
-      technologies: ['React Native', 'Typescript'],
+      content: 'Command line application that simulates a game of blackjack',
+      technologies: ['Python'],
     },
   ];
 
