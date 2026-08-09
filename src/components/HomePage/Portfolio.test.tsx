@@ -8,7 +8,7 @@ describe('Portfolio', () => {
     const projects = [
       { title: 'Wedd.io', url: 'https://github.com/JInsalaco/CS554_Good_Nodels' },
       { title: 'The Duck Pond', url: 'https://github.com/JInsalaco/CS546_Group5' },
-      { title: 'React Native Blackjack', url: 'https://github.com/JInsalaco/Blackjack' },
+      { title: 'Python Blackjack', url: 'https://github.com/JInsalaco/Blackjack' },
     ];
 
     projects.forEach(({ title, url }) => {
@@ -25,6 +25,6 @@ describe('Portfolio', () => {
 
     expect(screen.getByText('Redis')).toBeInTheDocument();
     expect(screen.getByText('Vue')).toBeInTheDocument();
-    expect(screen.getByText('React Native')).toBeInTheDocument();
+    expect(screen.getByText('Python')).toBeInTheDocument();
   });
 });
