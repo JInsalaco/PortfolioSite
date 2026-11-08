@@ -114,10 +114,8 @@ Build settings live in [`amplify.yml`](amplify.yml); when that file is present i
 precedence over the build settings stored in the Amplify Console. It pins Node to 22 (Vite
 requires >= 22.12) and publishes the `build/` directory.
 
-The app must run on the **Amazon Linux 2023** build image, set in the Console under
-**App settings -> Build settings -> Build image settings**. The older Amazon Linux 2 image
-ships glibc 2.26, and Node 22 binaries need 2.28 or newer, so `nvm use 22` resolves but the
-resulting `node` cannot execute.
+Requires the **Amazon Linux 2023** build image, set in the Amplify Console; Node 22 will not
+run on the older Amazon Linux 2 image.
 
 As a single-page app, Amplify needs a rewrite rule so client-side routes such as `/resume`
 resolve when loaded directly instead of returning 404. That rule is configured in the Amplify

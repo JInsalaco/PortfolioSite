@@ -3,10 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        # Vite 8 bundles with rolldown, which imports `styleText` from `node:util`.
-        # That needs Node >= 20.12, so pin 22 to match `engines` in package.json.
-        # Requires the Amazon Linux 2023 build image; AL2's glibc is too old to run
-        # a Node 22 binary at all.
         - nvm use 22
         - npm ci
     build:
