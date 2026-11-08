@@ -14,8 +14,9 @@ export function Welcome() {
           <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">Joseph&nbsp;</h1>
           <h1 className="text-4xl font-bold text-primary sm:text-5xl md:text-6xl">Insalaco</h1>
           <div className="mt-2 w-full">
-            <Badge className="m-0.5">Full-stack Developer</Badge>
-            <Badge className="m-0.5">Product Owner</Badge>
+            <Badge className="m-0.5">Senior Product Manager</Badge>
+            <Badge className="m-0.5">Payments &amp; Digital Wallets</Badge>
+            <Badge className="m-0.5">Engineer-turned-PM</Badge>
             <Badge className="m-0.5">New York City</Badge>
           </div>
         </div>
